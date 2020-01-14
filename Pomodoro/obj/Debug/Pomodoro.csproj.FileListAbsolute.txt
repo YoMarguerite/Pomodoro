@@ -13,3 +13,10 @@ C:\Users\yoann\Source\Repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Pomodoro.cs
 C:\Users\yoann\Source\Repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Pomodoro.csproj.CoreCompileInputs.cache
 C:\Users\yoann\Source\Repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Pomodoro.exe
 C:\Users\yoann\Source\Repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Pomodoro.pdb
+C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Accueil.g.cs
+C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Accueil.baml
+C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Calendrier.g.cs
+C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Timer.g.cs
+C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Calendrier.baml
+C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Timer.baml

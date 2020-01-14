@@ -6,9 +6,15 @@
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="300">
-    <StackPanel>
-        <TextBlock Text="Youhou"></TextBlock>
-        <TextBlock>OK</TextBlock>
-        <TextBlock Text="{Binding time}"></TextBlock>
-    </StackPanel>
+    <TabControl>
+        <TabItem Header="Accueil">
+            <local:Accueil></local:Accueil>
+        </TabItem>
+        <TabItem Header="Timer">
+            <local:Timer></local:Timer>
+        </TabItem>
+        <TabItem Header="Calendrier">
+            <local:Calendrier></local:Calendrier>
+        </TabItem>
+    </TabControl>
 </Window>

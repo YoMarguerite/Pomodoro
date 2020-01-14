@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace Pomodoro
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Accueil.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Accueil : UserControl
     {
-        public String time {get;set;}
-        public MainWindow()
+        public Accueil()
         {
             InitializeComponent();
-            this.time = "ok";
-            this.DataContext = this;
         }
     }
 }

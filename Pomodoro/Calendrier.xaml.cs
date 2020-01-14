@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace Pomodoro
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Calendrier.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Calendrier : UserControl
     {
-        public String time {get;set;}
-        public MainWindow()
+        public Calendrier()
         {
             InitializeComponent();
-            this.time = "ok";
-            this.DataContext = this;
         }
     }
 }
