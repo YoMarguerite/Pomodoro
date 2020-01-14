@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="300">
+    <StackPanel>
+        <TextBlock Text="Youhou"></TextBlock>
+        <TextBlock>OK</TextBlock>
+        <TextBlock Text="{Binding time}"></TextBlock>
+    </StackPanel>
 </Window>

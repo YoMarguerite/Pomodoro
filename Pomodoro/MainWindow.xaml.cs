@@ -20,9 +20,12 @@ namespace Pomodoro
     /// </summary>
     public partial class MainWindow : Window
     {
+        public String time;
         public MainWindow()
         {
             InitializeComponent();
+            this.time = "ok";
+            this.DataContext = this;
         }
     }
 }
