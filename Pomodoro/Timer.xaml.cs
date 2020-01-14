@@ -12,17 +12,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Pomodoro
 {
     /// <summary>
     /// Logique d'interaction pour Timer.xaml
     /// </summary>
-    public partial class Timer : UserControl
+    public partial class TimerControl : UserControl
     {
-        public Timer()
+        public String timeDisplay { get; set; }
+        public DispatcherTimer dispatcherTimer { get; set; }
+
+        public TimerControl()
         {
             InitializeComponent();
+            this.DataContext = this;
+            SetTimer();
+           
+        }
+
+        private void SetTimer()
+        {
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+        }
+
+        private void dispatcherTimer_Tick(Object source, EventArgs e)
+        {
         }
     }
 }

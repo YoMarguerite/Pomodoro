@@ -11,7 +11,7 @@
             <local:Accueil></local:Accueil>
         </TabItem>
         <TabItem Header="Timer">
-            <local:Timer></local:Timer>
+            <local:TimerControl></local:TimerControl>
         </TabItem>
         <TabItem Header="Calendrier">
             <local:Calendrier></local:Calendrier>
