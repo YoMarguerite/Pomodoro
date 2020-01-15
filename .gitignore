@@ -4,3 +4,6 @@
 
 /.vs
 /Pomodoro/.vs/Pomodoro/v15
+/Pomodoro/.vs/Pomodoro/v16/Server/sqlite3
+/Pomodoro/pomodoro_bdd.mdf
+/Pomodoro/pomodoro_bdd_log.ldf
