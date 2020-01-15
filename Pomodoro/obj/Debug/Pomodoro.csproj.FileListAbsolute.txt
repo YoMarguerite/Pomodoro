@@ -20,3 +20,32 @@ C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Calendrier.
 C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Timer.g.cs
 C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Calendrier.baml
 C:\Users\yoann\source\repos\YoMarguerite\Pomodoro\Pomodoro\obj\Debug\Timer.baml
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\pomodoro_bdd.mdf
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\pomodoro_bdd_log.ldf
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\Pomodoro.exe.config
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\Pomodoro.exe
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\Pomodoro.pdb
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\EntityFramework.dll
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\EntityFramework.xml
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro.csprojAssemblyReference.cache
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Accueil.g.cs
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Calendrier.g.cs
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\MainWindow.g.cs
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Timer.g.cs
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\App.g.cs
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro_Content.g.cs
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro_MarkupCompile.cache
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro_MarkupCompile.lref
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Accueil.baml
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Calendrier.baml
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\MainWindow.baml
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Timer.baml
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro.g.resources
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro.Properties.Resources.resources
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro.csproj.GenerateResource.cache
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro.csproj.CopyComplete
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro.exe
+C:\Users\Mansard Paul\Source\Repos\Pomodoro\Pomodoro\obj\Debug\Pomodoro.pdb

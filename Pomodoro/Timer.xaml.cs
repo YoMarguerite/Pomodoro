@@ -34,7 +34,7 @@ namespace Pomodoro
 
         private void SetTimer()
         {
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            //dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
         }
 
         private void dispatcherTimer_Tick(Object source, EventArgs e)

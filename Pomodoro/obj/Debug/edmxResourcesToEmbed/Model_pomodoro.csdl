@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pomodoro_bddModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="pomodoro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="tags_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tag" Relationship="Self.FK_pomodoro_Tags" FromRole="pomodoro" ToRole="tags" />
+  </EntityType>
+  <EntityType Name="tag">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="pomodoroes" Relationship="Self.FK_pomodoro_Tags" FromRole="tags" ToRole="pomodoro" />
+  </EntityType>
+  <Association Name="FK_pomodoro_Tags">
+    <End Role="tags" Type="Self.tag" Multiplicity="1" />
+    <End Role="pomodoro" Type="Self.pomodoro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tags">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pomodoro">
+        <PropertyRef Name="tags_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pomodoro_bddEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="pomodoroes" EntityType="Self.pomodoro" />
+    <EntitySet Name="tags" EntityType="Self.tag" />
+    <AssociationSet Name="FK_pomodoro_Tags" Association="Self.FK_pomodoro_Tags">
+      <End Role="tags" EntitySet="tags" />
+      <End Role="pomodoro" EntitySet="pomodoroes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
