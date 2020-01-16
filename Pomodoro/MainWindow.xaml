@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="520">
     <TabControl SelectedIndex="0" Background="#003366">
-        <TabItem Header="Accueil">
+        <TabItem Header="Accueil" Style="{DynamicResource Tab}">
             <local:Accueil></local:Accueil>
         </TabItem>
-        <TabItem Header="Timer">
+        <TabItem Header="Timer" Style="{DynamicResource Tab}">
             <local:Timer></local:Timer>
         </TabItem>
-        <TabItem Header="Calendrier">
+        <TabItem Header="Calendrier" Style="{DynamicResource Tab}">
             <local:Calendrier></local:Calendrier>
         </TabItem>
     </TabControl>

@@ -96,6 +96,7 @@
     <Compile Include="DAL\DatabaseConnection.cs" />
     <Compile Include="DAL\IDatabaseConnection.cs" />
     <Compile Include="DAL\TagsDataAccess.cs" />
+    <Compile Include="Model\Pomodoro.cs" />
     <Compile Include="Model\Tag.cs" />
     <Compile Include="Timer.xaml.cs">
       <DependentUpon>Timer.xaml</DependentUpon>
