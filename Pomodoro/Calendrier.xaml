@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Pomodoro"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock>Calendrier</TextBlock>
-    </Grid>
+             d:DesignHeight="450" d:DesignWidth="300">
+    <DataGrid Name="TimePerActivity" ItemsSource="{Binding}" AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Activities" Binding="{Binding Activities}" />
+            <DataGridTextColumn Header="Number of Pomodoro" Binding="{Binding NbPomodoro}" />
+            <DataGridTextColumn Header="Time" Binding="{Binding Time}" />
+        </DataGrid.Columns>
+    </DataGrid>
 </UserControl>

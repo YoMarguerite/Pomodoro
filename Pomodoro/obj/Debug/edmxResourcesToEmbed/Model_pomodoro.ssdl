@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pomodoro_bddModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="pomodoro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="tags_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_pomodoro_Tags">
+    <End Role="tags" Type="Self.tags" Multiplicity="1" />
+    <End Role="pomodoro" Type="Self.pomodoro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tags">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pomodoro">
+        <PropertyRef Name="tags_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pomodoro_bddModelStoreContainer">
+    <EntitySet Name="pomodoro" EntityType="Self.pomodoro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tags" EntityType="Self.tags" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_pomodoro_Tags" Association="Self.FK_pomodoro_Tags">
+      <End Role="tags" EntitySet="tags" />
+      <End Role="pomodoro" EntitySet="pomodoro" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
