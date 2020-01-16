@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
             
             <Label Name="timer" FontSize="48" Grid.Row="1" Grid.Column="1"
-                   HorizontalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White"
                    VerticalAlignment="Center"></Label>
             
             <Slider Name="slider" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3">
