@@ -2,6 +2,11 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using Pomodoro.DAL;
+using Pomodoro.Model;
 
 namespace Pomodoro
 {
@@ -11,32 +16,55 @@ namespace Pomodoro
     /// </summary>
     public partial class Accueil : UserControl
     {
-
+        
         public Accueil()
         {
             InitializeComponent();
 
-        }
-
-        //Ajout d'une nouvelle tache dans la list du jour
-        public void AddItem(object sender, RoutedEventArgs e)
-        {
-            if (tbx_libellePomodoro.Text != "")
+            try
             {
-                lbx_pomodoro.Items.Add(tbx_libellePomodoro.Text);
+                TagsDataAccess tagData = new TagsDataAccess();
+                lbx_pomodoro_bdd.ItemsSource = tagData.getTags();
+            }
+            catch
+            {
+                MessageBox.Show("Récupération des tags impossible.");
+            }
+        }
+      
+        //Ajout d'une nouvelle tache dans la list du jour
+        public async void AddItem(object sender, RoutedEventArgs e)
+        {
+            if(tbx_libellePomodoro.Text != "")
+            {
+                
+
+                try
+                {
+                    TagsDataAccess tagData = new TagsDataAccess();
+                    tagData.SaveTag(new Tag
+                    {
+                        Libelle = tbx_libellePomodoro.Text
+                    });
+                    lbx_pomodoro.Items.Add(tbx_libellePomodoro.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Sauvegarde du Tag " + tbx_libellePomodoro.Text + " impossible.");
+                }
+
                 tbx_libellePomodoro.Text = "";
             }
-            lbx_pomodoro_bdd.Items.Add("test");
         }
 
         //Suppression d'un element dans la liste des taches du jour
         private void DeleteItem(object sender, RoutedEventArgs e)
         {
-            if (lbx_pomodoro.Items.Count > 0)
+            if(lbx_pomodoro.Items.Count > 0)
             {
                 lbx_pomodoro.Items.RemoveAt(lbx_pomodoro.Items.IndexOf(lbx_pomodoro.SelectedItem));
             }
-
+            
         }
 
         //Ajout de tache deja existante dans la list du jour
@@ -44,5 +72,6 @@ namespace Pomodoro
         {
             lbx_pomodoro.Items.Add(lbx_pomodoro_bdd.SelectedItem);
         }
+
     }
 }
