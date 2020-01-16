@@ -28,7 +28,7 @@ namespace Pomodoro
             }
             catch
             {
-                MessageBox.Show("Récupération des tags impossible.");
+                //MessageBox.Show("Récupération des tags impossible.");
             }
         }
       
