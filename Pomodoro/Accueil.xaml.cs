@@ -33,7 +33,7 @@ namespace Pomodoro
         }
       
         //Ajout d'une nouvelle tache dans la list du jour
-        public async void AddItem(object sender, RoutedEventArgs e)
+        public void AddItem(object sender, RoutedEventArgs e)
         {
             if(tbx_libellePomodoro.Text != "")
             {        
