@@ -2,9 +2,7 @@
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-/Pomodoro/.vs/Pomodoro/v15
-/Pomodoro/.vs/Pomodoro/v16/Server/sqlite3
+
 
 # User-specific files
 *.rsuser

@@ -18,6 +18,6 @@ namespace Pomodoro
         public System.DateTime date { get; set; }
         public int tags_id { get; set; }
     
-        public virtual tag tag { get; set; }
+        public virtual tags tags { get; set; }
     }
 }

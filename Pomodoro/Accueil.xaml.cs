@@ -26,9 +26,24 @@ namespace Pomodoro
             InitializeComponent();
 
         }
+      
         public void AddItem(object sender, RoutedEventArgs e)
         {
             lbx_pomodoro.Items.Add(tbx_libellePomodoro.Text);
+
+            App_dbContext db = new App_dbContext();
+
+            if (db.Database.Connection.State == System.Data.ConnectionState.Closed || db.Database.Connection.State == System.Data.ConnectionState.Broken) db.Database.Connection.Open();
+
+            var data = db.tags.FirstOrDefault();
+            data = new tags();
+            data.libelle = "test2";
+            db.tags.Add(data);
+
+            db.SaveChanges();
+            db.Database.Connection.Close();
+            
+
             tbx_libellePomodoro.Text = "";
         }
 
@@ -39,6 +54,39 @@ namespace Pomodoro
                 lbx_pomodoro.Items.RemoveAt(lbx_pomodoro.Items.IndexOf(lbx_pomodoro.SelectedItem));
             }
             
+        }
+
+        public async void load_Data()
+
+        {
+
+            App_dbContext db = new App_dbContext();
+
+            if (db.Database.Connection.State == System.Data.ConnectionState.Closed || db.Database.Connection.State == System.Data.ConnectionState.Broken) await db.Database.Connection.OpenAsync();
+
+
+
+            try
+
+            {
+
+                var data = db.tags.FirstOrDefault(); //id == 1
+
+                if (data == null)
+                {
+                    //--< Add() >--
+
+                    data = new tags();
+                    data.libelle = "test2";
+                    db.tags.Add(data);
+
+                    //--</ Add() >--
+
+                }
+                await db.SaveChangesAsync();
+            }
+
+            catch (Exception ex){ }
         }
     }
 }
