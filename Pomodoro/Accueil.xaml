@@ -7,11 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBox Name="tbx_libellePomodoro" HorizontalAlignment="Left" Height="23" Margin="133,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Nouveau pomodoro" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="153,60,0,0" VerticalAlignment="Top" Width="76" Click="AddItem"/>
-        <ListBox Name="lbx_pomodoro" HorizontalAlignment="Left" Height="127" Margin="92,86,0,0" VerticalAlignment="Top" Width="194"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="133,237,0,0" VerticalAlignment="Top" Width="75" Click="DeleteItem"/>
+        <TextBox Name="tbx_libellePomodoro" HorizontalAlignment="Left" Height="23" Margin="40,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+        <Label Content="Nouveau pomodoro" HorizontalAlignment="Left" Margin="79,16,0,0" VerticalAlignment="Top"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="95,99,0,0" VerticalAlignment="Top" Width="76" Click="AddItem"/>
+        <ListBox Name="lbx_pomodoro" HorizontalAlignment="Left" Height="127" Margin="40,131,0,0" VerticalAlignment="Top" Width="194"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="95,263,0,0" VerticalAlignment="Top" Width="75" Click="DeleteItem"/>
+        <ListBox Name="lbx_pomodoro_bdd" HorizontalAlignment="Left" Height="127" Margin="299,131,0,0" VerticalAlignment="Top" Width="194"/>
+        <Button Content="test" HorizontalAlignment="Left" Margin="244,181,0,0" VerticalAlignment="Top" Width="39" Click="AddItemBdd"/>
 
     </Grid>
 </UserControl>
