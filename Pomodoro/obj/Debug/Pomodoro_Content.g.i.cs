@@ -8,12 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbmodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbmodel.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pomodoro_bdd.mdf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pomodoro_bdd_log.ldf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/sqlitepclraw.lib.e_sqlite3.2.0.2/runtimes/win-x86/native/e_sqlite3.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/sqlitepclraw.lib.e_sqlite3.2.0.2/runtimes/win-x64/native/e_sqlite3.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/sqlitepclraw.lib.e_sqlite3.2.0.2/runtimes/win-arm/native/e_sqlite3.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/sqlitepclraw.lib.e_sqlite3.v110_xp.1.1.13/runtimes/win-x86/native/e_sqli" +
+    "te3.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/sqlitepclraw.lib.e_sqlite3.v110_xp.1.1.13/runtimes/win-x64/native/e_sqli" +
+    "te3.dll")]
 
 

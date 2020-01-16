@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="300">
-    <TabControl SelectedIndex="1" Background="#003366">
+        Title="MainWindow" Height="450" Width="520">
+    <TabControl SelectedIndex="0" Background="#003366">
         <TabItem Header="Accueil">
             <local:Accueil></local:Accueil>
         </TabItem>
