@@ -3,9 +3,10 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Text;
 using System.Threading.Tasks;
+using Pomodoro.DAL;
+using Pomodoro.Model;
 
 namespace Pomodoro
 {
@@ -20,17 +21,40 @@ namespace Pomodoro
         {
             InitializeComponent();
 
+            try
+            {
+                TagsDataAccess tagData = new TagsDataAccess();
+                lbx_pomodoro_bdd.ItemsSource = tagData.getTags();
+            }
+            catch
+            {
+                MessageBox.Show("Récupération des tags impossible.");
+            }
         }
       
         //Ajout d'une nouvelle tache dans la list du jour
-        public void AddItem(object sender, RoutedEventArgs e)
+        public async void AddItem(object sender, RoutedEventArgs e)
         {
             if(tbx_libellePomodoro.Text != "")
             {
-                lbx_pomodoro.Items.Add(tbx_libellePomodoro.Text);
+                
+
+                try
+                {
+                    TagsDataAccess tagData = new TagsDataAccess();
+                    tagData.SaveTag(new Tag
+                    {
+                        Libelle = tbx_libellePomodoro.Text
+                    });
+                    lbx_pomodoro.Items.Add(tbx_libellePomodoro.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Sauvegarde du Tag " + tbx_libellePomodoro.Text + " impossible.");
+                }
+
                 tbx_libellePomodoro.Text = "";
             }
-            lbx_pomodoro_bdd.Items.Add("test");
         }
 
         //Suppression d'un element dans la liste des taches du jour
@@ -49,37 +73,5 @@ namespace Pomodoro
             lbx_pomodoro.Items.Add(lbx_pomodoro_bdd.SelectedItem);
         }
 
-        public async void load_Data()
-
-        {
-
-            App_dbContext db = new App_dbContext();
-
-            if (db.Database.Connection.State == System.Data.ConnectionState.Closed || db.Database.Connection.State == System.Data.ConnectionState.Broken) await db.Database.Connection.OpenAsync();
-
-
-
-            try
-
-            {
-
-                var data = db.tags.FirstOrDefault(); //id == 1
-
-                if (data == null)
-                {
-                    //--< Add() >--
-
-                    data = new tags();
-                    data.libelle = "test2";
-                    db.tags.Add(data);
-
-                    //--</ Add() >--
-
-                }
-                await db.SaveChangesAsync();
-            }
-
-            catch (Exception ex){ }
-        }
     }
 }
