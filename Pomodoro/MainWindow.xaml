@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="300">
-    <TabControl>
+    <TabControl SelectedIndex="1" Background="#003366">
         <TabItem Header="Accueil">
             <local:Accueil></local:Accueil>
         </TabItem>
         <TabItem Header="Timer">
-            <local:TimerControl></local:TimerControl>
+            <local:Timer></local:Timer>
         </TabItem>
         <TabItem Header="Calendrier">
             <local:Calendrier></local:Calendrier>

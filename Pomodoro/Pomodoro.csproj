@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class\MyHelper.cs" />
+    <Compile Include="Class\ValueAngleConverter.cs" />
+    <Compile Include="Class\ValueTextConverter.cs" />
     <Compile Include="Timer.xaml.cs">
       <DependentUpon>Timer.xaml</DependentUpon>
     </Compile>
@@ -115,8 +118,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
