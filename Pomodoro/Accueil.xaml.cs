@@ -40,11 +40,12 @@ namespace Pomodoro
                 try
                 {
                     TagsDataAccess tagData = new TagsDataAccess();
-                    tagData.SaveTag(new Tag
+                    Tag tag = new Tag
                     {
                         Libelle = tbx_libellePomodoro.Text
-                    });
-                    lbx_pomodoro.Items.Add(tbx_libellePomodoro.Text);
+                    };
+                    tagData.SaveTag(tag);
+                    lbx_pomodoro.Items.Add(tag);
                 }
                 catch
                 {
@@ -68,7 +69,8 @@ namespace Pomodoro
         //Ajout de tache deja existante dans la list du jour
         public void AddItemBdd(object sender, RoutedEventArgs e)
         {
-            lbx_pomodoro.Items.Add(lbx_pomodoro_bdd.SelectedItem);
+            var index = lbx_pomodoro_bdd.SelectedIndex;
+            lbx_pomodoro.Items.Add((Tag)lbx_pomodoro_bdd.Items[index]);
         }
 
     }

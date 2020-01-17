@@ -7,9 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBox Name="tbx_libellePomodoro" HorizontalAlignment="Left" Height="23" Margin="40,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
-        <Label Content="Nouveau pomodoro" HorizontalAlignment="Left" Margin="79,16,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="95,99,0,0" VerticalAlignment="Top" Width="76" Click="AddItem"/>
+        <TextBox Name="tbx_libellePomodoro" HorizontalAlignment="Left" Height="23" Margin="169,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+        <Label Content="New tags :" HorizontalAlignment="Left" Margin="104,38,0,0" VerticalAlignment="Top" Foreground="White" Height="29"/>
+        <Button Content="+" HorizontalAlignment="Left" 
+                Margin="368,39,0,0" VerticalAlignment="Top" 
+                Width="20" Click="AddItem" Height="23"
+                Style="{DynamicResource RoundButton}" >
+
+        </Button>
         <ListBox Name="lbx_pomodoro" 
                  HorizontalAlignment="Left" Height="127" Margin="40,131,0,0" 
                  VerticalAlignment="Top" Width="194">
@@ -28,12 +33,15 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Viewbox>
-                        <Label Content="{Binding Libelle}"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Width="20" Click="AddItemBdd" Height="23" Style="{DynamicResource RoundButton}">+</Button>
+                            <Label Content="{Binding Libelle}"></Label>
+                        </StackPanel>
                     </Viewbox>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="←" HorizontalAlignment="Left" Margin="244,181,0,0" VerticalAlignment="Top" Width="33" Click="AddItemBdd"/>
-
+        <Label Content="List tags day" HorizontalAlignment="Left" Margin="40,100,0,0" VerticalAlignment="Top" Width="186" Foreground="White"/>
+        <Label Content="Existing tags" HorizontalAlignment="Left" Margin="291,100,0,0" VerticalAlignment="Top" Width="183" Foreground="White"/>
     </Grid>
 </UserControl>
