@@ -8,7 +8,6 @@
         Height="350" Width="250">
     <UserControl.Resources>
         <local:ValueAngleConverter x:Key="valueAngleConverter"/>
-        <local:ValueTextConverter x:Key="valueTextConverter"/>
     </UserControl.Resources>
     <StackPanel>
         <Grid>
@@ -27,7 +26,7 @@
             <Label Name="timer" FontSize="48" Grid.Row="1" Grid.Column="1"
                    HorizontalAlignment="Center" Foreground="White"
                    VerticalAlignment="Center"></Label>
-            
+
             <Slider Name="slider" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3">
                 <Slider.Template>
                     <ControlTemplate>
@@ -43,12 +42,6 @@
                                     <Ellipse Fill="LightBlue" Width="20" Height="20" Canvas.Left="90" Canvas.Top="10" 
                                          MouseLeftButtonDown="Ellipse_MouseLeftButtonDown"
                                          MouseLeftButtonUp="Ellipse_MouseLeftButtonUp">
-                                        <Ellipse.ToolTip>
-                                            <ToolTip>
-                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
-                                                         Path="Value" Converter="{StaticResource valueTextConverter}"/>
-                                            </ToolTip>
-                                        </Ellipse.ToolTip>
                                     </Ellipse>
                                     <Canvas.RenderTransform>
                                         <RotateTransform CenterX="100" CenterY="100">

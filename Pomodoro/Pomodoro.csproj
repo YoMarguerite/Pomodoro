@@ -92,7 +92,6 @@
     </ApplicationDefinition>
     <Compile Include="Class\MyHelper.cs" />
     <Compile Include="Class\ValueAngleConverter.cs" />
-    <Compile Include="Class\ValueTextConverter.cs" />
     <Compile Include="DAL\DatabaseConnection.cs" />
     <Compile Include="DAL\PomodorosDataAccess.cs" />
     <Compile Include="DAL\TagsDataAccess.cs" />
