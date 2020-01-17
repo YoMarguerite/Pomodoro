@@ -233,5 +233,6 @@ _Pvt_Extensions
 /obj/Debug/*
 /bin/Debug/*
 Pomodoro/bin/
+Pomodoro/v16/
 
 Pomodoro/obj/

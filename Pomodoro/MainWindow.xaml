@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pomodoro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="520">
+        Title="Pomodoro" Height="450" Width="520">
     <TabControl SelectedIndex="0" Background="#003366">
         <TabItem Header="Accueil" Style="{DynamicResource Tab}">
             <local:Accueil></local:Accueil>

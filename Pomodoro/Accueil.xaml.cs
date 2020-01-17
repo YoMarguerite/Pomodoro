@@ -69,8 +69,7 @@ namespace Pomodoro
         //Ajout de tache deja existante dans la list du jour
         public void AddItemBdd(object sender, RoutedEventArgs e)
         {
-            var index = lbx_pomodoro_bdd.SelectedIndex;
-            lbx_pomodoro.Items.Add((Tag)lbx_pomodoro_bdd.Items[index]);
+            lbx_pomodoro.Items.Add((Tag)lbx_pomodoro_bdd.SelectedItem);
         }
 
     }
