@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using System;
 
-namespace Pomodoro.Model
+namespace PomodoroProjet.Model
 {
     public class Pomodoro
     {

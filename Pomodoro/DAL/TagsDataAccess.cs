@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Pomodoro.DAL;
-using Pomodoro.Model;
+using PomodoroProjet.Model;
 using SQLite;
 
-namespace Pomodoro.DAL
+namespace PomodoroProjet.DAL
 {
     public class TagsDataAccess
     {
@@ -36,28 +34,6 @@ namespace Pomodoro.DAL
             });
             this.Tags.Add(GetTag(i));
         }
-
-        //public IEnumerable<Tag> GetFilteredTags(string libelle, int id)
-        //{
-        //    lock (collisionLock)
-        //    {
-        //        var query = from Tag in database.Table<Tag>()
-        //                    where Tag.libelle.Contains(libelle) && Tag.User != id
-        //                    select Tag;
-        //        return query.AsEnumerable();
-        //    }
-        //}
-
-        //public IEnumerable<Tag> NotMyTags(int id)
-        //{
-        //    lock (collisionLock)
-        //    {
-        //        var query = from Tag in database.Table<Tag>()
-        //                    where Tag.User != id
-        //                    select Tag;
-        //        return query.AsEnumerable();
-        //    }
-        //}
 
         public IEnumerable<Tag> getTags()
         {

@@ -1,4 +1,4 @@
-﻿using Pomodoro.Class;
+﻿using PomodoroProjet.Class;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -6,7 +6,7 @@ using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace Pomodoro
+namespace PomodoroProjet
 {
     /// <summary>
     /// Interaction logic for Window1.xaml

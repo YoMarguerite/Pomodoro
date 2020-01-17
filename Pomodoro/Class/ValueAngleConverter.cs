@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Data;
 
-namespace Pomodoro.Class
+namespace PomodoroProjet.Class
 {
     public partial class ValueAngleConverter : IMultiValueConverter
     {
