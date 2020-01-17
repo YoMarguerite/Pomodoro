@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Pomodoro.Model
+namespace PomodoroProjet.Model
 {
     public class Tag
     {

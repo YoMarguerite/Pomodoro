@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{579E7E57-09EF-41F0-BEC5-62305160E3BD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Pomodoro</RootNamespace>
+    <RootNamespace>PomodoroProjet</RootNamespace>
     <AssemblyName>Pomodoro</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -94,7 +94,7 @@
     <Compile Include="Class\ValueAngleConverter.cs" />
     <Compile Include="Class\ValueTextConverter.cs" />
     <Compile Include="DAL\DatabaseConnection.cs" />
-    <Compile Include="DAL\IDatabaseConnection.cs" />
+    <Compile Include="DAL\PomodorosDataAccess.cs" />
     <Compile Include="DAL\TagsDataAccess.cs" />
     <Compile Include="Model\Pomodoro.cs" />
     <Compile Include="Model\Tag.cs" />

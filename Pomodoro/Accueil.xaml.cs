@@ -1,14 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Pomodoro.DAL;
-using Pomodoro.Model;
+using PomodoroProjet.DAL;
+using PomodoroProjet.Model;
 
-namespace Pomodoro
+namespace PomodoroProjet
 {
     /// <summary>
     /// Logique d'interaction pour Accueil.xaml

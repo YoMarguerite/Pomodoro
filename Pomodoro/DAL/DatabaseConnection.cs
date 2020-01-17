@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using SQLite;
 
-namespace Pomodoro.DAL
+namespace PomodoroProjet.DAL
 {
     public class DatabaseConnection //: IDatabaseConnection
     {
