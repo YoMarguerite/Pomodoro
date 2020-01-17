@@ -38,22 +38,15 @@
                         <Grid x:Name="grid">
                             <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2">
                                 <Border.Background>
-                                    <RadialGradientBrush GradientOrigin="0.496,1.052">
-                                        <RadialGradientBrush.RelativeTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform CenterX="0.5" CenterY="0.5" 
-                                                        ScaleX="1.5" ScaleY="1.5"/>
-                                                <TranslateTransform X="0.02" Y="0.3"/>
-                                            </TransformGroup>
-                                        </RadialGradientBrush.RelativeTransform>
-                                        <GradientStop Offset="1" Color="#00000000"/>
-                                        <GradientStop Offset="0.3" Color="#FFFFFFFF"/>
-                                    </RadialGradientBrush>
+                                    <LinearGradientBrush EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+                                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#66ffff" Offset="0.3"/>
+                                        <GradientStop Color="#33cccc" Offset="0.7"/>
+                                    </LinearGradientBrush>
                                 </Border.Background>
                                 <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
-                                          TextElement.FontWeight="Bold"
-                                              >
+                                          TextElement.FontWeight="Bold">
                                 </ContentPresenter>
                             </Border>
 
