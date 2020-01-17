@@ -19,6 +19,8 @@ namespace Pomodoro
 
             int minutes = 1;
 
+            this.tag.Content = "Work";
+
             this.time = new DateTime();
             this.time = this.time.AddMinutes(minutes);
             this.timer.Content = this.time.ToString("mm:ss");

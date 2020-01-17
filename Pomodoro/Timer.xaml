@@ -69,6 +69,10 @@
             </Slider>
             
         </Grid>
+
+        <Label Name="tag" FontSize="30" Grid.Row="1" Grid.Column="1"
+                   HorizontalAlignment="Center" Foreground="White"
+                   VerticalAlignment="Center"></Label>
         
         <Button Name="btn1" Style="{DynamicResource RoundCorner}" 
         Click="OnClick1" Cursor="Hand">

@@ -232,3 +232,6 @@ _Pvt_Extensions
 /.dotnet
 /obj/Debug/*
 /bin/Debug/*
+Pomodoro/bin/
+
+Pomodoro/obj/
