@@ -21,12 +21,14 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Viewbox>
-                        <Label Content="{Binding Libelle}"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Libelle}"></Label>
+                            <Button Width="20" Click="DeleteItem" Height="23" Style="{DynamicResource RoundButton}">x</Button>
+                        </StackPanel>
                     </Viewbox>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="95,263,0,0" VerticalAlignment="Top" Width="75" Click="DeleteItem"/>
         <ListBox Name="lbx_pomodoro_bdd" 
                  HorizontalAlignment="Left" Height="127" Margin="291,131,0,0" 
                  VerticalAlignment="Top" Width="194">
