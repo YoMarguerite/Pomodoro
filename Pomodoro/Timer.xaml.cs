@@ -1,5 +1,7 @@
 ﻿using PomodoroProjet.Class;
+using PomodoroProjet.Model;
 using System;
+using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -43,6 +45,11 @@ namespace PomodoroProjet
         private DispatcherTimer dispatcher;
         private DateTime time;
         private bool pause;
+
+        public void StartNewPomodoros(IEnumerable tags)
+        {
+
+        }
 
         private void dispatcherTimer_Tick(Object source, EventArgs e)
         {

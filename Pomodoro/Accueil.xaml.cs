@@ -68,5 +68,13 @@ namespace PomodoroProjet
             lbx_pomodoro.Items.Add(((Button)sender).Tag);
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TabControl tabcontrol = (TabControl)App.Current.MainWindow.FindName("tabcontrol");
+            tabcontrol.SelectedIndex = 1;
+
+            Timer time = (Timer)tabcontrol.FindName("Timer");
+            time.StartNewPomodoros(lbx_pomodoro.ItemsSource);
+        }
     }
 }
