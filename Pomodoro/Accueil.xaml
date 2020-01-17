@@ -15,16 +15,16 @@
                 Style="{DynamicResource RoundButton}" >
 
         </Button>
-        <ListBox Name="lbx_pomodoro" 
+        <ListBox Name="lbx_pomodoro" HorizontalContentAlignment="Stretch"
                  HorizontalAlignment="Left" Height="127" Margin="40,131,0,0" 
                  VerticalAlignment="Top" Width="194">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Viewbox>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="{Binding Libelle}"></Label>
-                            <Button Width="20" Click="DeleteItem" Height="23" Style="{DynamicResource RoundButton}">x</Button>
-                        </StackPanel>
+                        <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                            <Label DockPanel.Dock="Left" HorizontalContentAlignment="Stretch" Content="{Binding Libelle}"></Label>
+                            <Button DockPanel.Dock="Right" Tag="{Binding}" Width="20" Click="DeleteItem" Height="23" Style="{DynamicResource RoundButton}">x</Button>
+                        </DockPanel>
                     </Viewbox>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -36,7 +36,7 @@
                 <DataTemplate>
                     <Viewbox>
                         <StackPanel Orientation="Horizontal">
-                            <Button Width="20" Click="AddItemBdd" Height="23" Style="{DynamicResource RoundButton}">+</Button>
+                            <Button Tag="{Binding}"  Width="20" Click="AddItemBdd" Height="23" Style="{DynamicResource RoundButton}">+</Button>
                             <Label Content="{Binding Libelle}"></Label>
                         </StackPanel>
                     </Viewbox>

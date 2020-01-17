@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using PomodoroProjet.DAL;
 using PomodoroProjet.Model;
@@ -56,7 +57,7 @@ namespace PomodoroProjet
         {
             if(lbx_pomodoro.Items.Count > 0)
             {
-                lbx_pomodoro.Items.RemoveAt(lbx_pomodoro.Items.IndexOf(lbx_pomodoro.SelectedItem));
+                lbx_pomodoro.Items.Remove(((Button)sender).Tag);
             }
             
         }
@@ -64,7 +65,7 @@ namespace PomodoroProjet
         //Ajout de tache deja existante dans la list du jour
         public void AddItemBdd(object sender, RoutedEventArgs e)
         {
-            lbx_pomodoro.Items.Add((Tag)lbx_pomodoro_bdd.SelectedItem);
+            lbx_pomodoro.Items.Add(((Button)sender).Tag);
         }
 
     }
