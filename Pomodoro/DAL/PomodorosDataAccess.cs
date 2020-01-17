@@ -31,11 +31,11 @@ namespace PomodoroProjet.DAL
             }
         }
 
-        public Model.Pomodoro GetPomodoro(int id)
+        public Pomodoro GetPomodoro(int id)
         {
             lock (collisionLock)
             {
-                return database.Table<Model.Pomodoro>().FirstOrDefault(Pomodoro => Pomodoro.ID == id);
+                return database.Table<Pomodoro>().FirstOrDefault(Pomodoro => Pomodoro.ID == id);
             }
         }
 

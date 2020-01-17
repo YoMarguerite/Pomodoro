@@ -1,4 +1,5 @@
 ﻿using PomodoroProjet.Class;
+using PomodoroProjet.DAL;
 using PomodoroProjet.Model;
 using System;
 using System.Collections;
@@ -28,6 +29,8 @@ namespace PomodoroProjet
             this.timer.Content = this.time.ToString("mm:ss");
 
             this.pause = true;
+            this.takeABreak = false;
+            this.nb = 0;
 
             this.dispatcher = new DispatcherTimer();
             this.dispatcher.Interval = TimeSpan.FromSeconds(1);
@@ -45,14 +48,27 @@ namespace PomodoroProjet
         private DispatcherTimer dispatcher;
         private DateTime time;
         private bool pause;
+        private bool takeABreak;
+        private int nb;
 
         private ItemCollection tags;
 
         public void StartNewPomodoros(ItemCollection tags)
         {
             this.tags = tags;
-            this.tag.Content = ((Tag)tags[0]).Libelle;
+            string libelle = ((Tag)tags[0]).Libelle;
+            this.tag.Content = libelle;
+            
+            Pomodoro pomodoro = new Pomodoro()
+            {
+                Libelle = libelle,
+                Date = DateTime.Now
+            };
+            PomodorosDataAccess pomodoroDataAccess = new PomodorosDataAccess();
+            pomodoroDataAccess.SavePomodoro(pomodoro);
+
             this.btn1.Content = "❚❚";
+            this.pause = false;
         }
 
         private void dispatcherTimer_Tick(Object source, EventArgs e)
@@ -68,25 +84,50 @@ namespace PomodoroProjet
                     }
                     catch
                     {
-                        this.time = this.time.AddMinutes(5);
-                        this.timer.Content = this.time.ToString("mm:ss");
-                        this.pause = true;
-                        String[] content = new string[] { "||", "▶" };
-                        this.btn1.Content = content[this.pause ? 1 : 0];
-                        this.slider.Maximum = 5 * 60;
-                        this.slider.Value = 0;
+                        this.takeABreak = !this.takeABreak;
+                        this.takeABreakActivate(this.takeABreak);
                     }
                     this.slider.Value = this.slider.Maximum-(this.time.Minute * 60 + this.time.Second);
                 }
             }
         }
 
+        private void ButonActivate(bool activate)
+        {
+            string[] content = new string[] { "❚❚", "▶" };
+            this.btn1.Content = content[activate ? 1 : 0];
+        }
+
+        private void takeABreakActivate(bool activate)
+        {
+            int minute = 0;
+            if (activate)
+            {
+                minute = (this.nb++ % 3 == 0) ? 15 : 5;
+                this.tag.Content = "Pause";
+            }
+            else
+            {
+                minute = 25;
+                if (this.tags.MoveCurrentToNext())
+                {
+                    this.tag.Content = ((Tag)this.tags.CurrentItem).Libelle;
+                }
+            }
+
+            DateTime date = new DateTime();
+            this.time = date.AddMinutes(minute);
+            this.timer.Content = this.time.ToString("mm:ss");
+
+            this.slider.Maximum = minute * 60;
+            this.slider.Value = 0;
+        }
+
         private void OnClick1(object sender, RoutedEventArgs e)
         {
             this.pause = !this.pause;
-            String[] content = new string[] { "❚❚", "▶" };
-            this.btn1.Content = content[this.pause ? 1 : 0];
-        }
+            ButonActivate(this.pause);
+        }       
 
         private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
