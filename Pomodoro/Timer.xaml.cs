@@ -46,9 +46,13 @@ namespace PomodoroProjet
         private DateTime time;
         private bool pause;
 
-        public void StartNewPomodoros(IEnumerable tags)
-        {
+        private ItemCollection tags;
 
+        public void StartNewPomodoros(ItemCollection tags)
+        {
+            this.tags = tags;
+            this.tag.Content = ((Tag)tags[0]).Libelle;
+            this.btn1.Content = "❚❚";
         }
 
         private void dispatcherTimer_Tick(Object source, EventArgs e)
@@ -80,19 +84,17 @@ namespace PomodoroProjet
         private void OnClick1(object sender, RoutedEventArgs e)
         {
             this.pause = !this.pause;
-            String[] content = new string[] { "||", "▶" };
+            String[] content = new string[] { "❚❚", "▶" };
             this.btn1.Content = content[this.pause ? 1 : 0];
         }
 
         private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //Enable moving mouse to change the value.
             _isPressed = true;
         }
 
         private void Ellipse_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            //Disable moving mouse to change the value.
             _isPressed = false;
         }
 
@@ -100,13 +102,11 @@ namespace PomodoroProjet
         {
             if (_isPressed)
             {
-                //Find the parent canvas.
                 if (_templateCanvas == null)
                 {
                     _templateCanvas = MyHelper.FindParent<Canvas>(e.Source as Ellipse);
                     if (_templateCanvas == null) return;
                 }
-                //Canculate the current rotation angle and set the value.
                 const double RADIUS = 100;
                 Point newPos = e.GetPosition(_templateCanvas);
                 double angle = MyHelper.GetAngleR(newPos, RADIUS);
