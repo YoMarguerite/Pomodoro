@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace PomodoroProjet
 {
@@ -11,6 +12,25 @@ namespace PomodoroProjet
         {
             InitializeComponent();
             this.DataContext = this;
+        }
+
+        private void Tabcontrol_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            string tabItem = ((sender as TabControl).SelectedItem as TabItem).Header as string;
+
+            switch (tabItem)
+            {
+                case "Calendrier":
+                    this.Calendrier.GetPomodorosLastDay();
+                    break;
+
+                case "Test":
+                    this.Test.Reset();
+                    break;
+
+                default:
+                    return;
+            }
         }
     }
 }

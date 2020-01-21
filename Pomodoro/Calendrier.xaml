@@ -6,11 +6,29 @@
              xmlns:local="clr-namespace:PomodoroProjet"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="300">
-    <DataGrid Name="TimePerActivity" ItemsSource="{Binding}" AutoGenerateColumns="False">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Activities" Binding="{Binding Activities}" />
-            <DataGridTextColumn Header="Number of Pomodoro" Binding="{Binding NbPomodoro}" />
-            <DataGridTextColumn Header="Time" Binding="{Binding Time}" />
-        </DataGrid.Columns>
-    </DataGrid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <DatePicker Name="date1" Grid.Column="0" Grid.Row="0"></DatePicker>
+        <DatePicker Name="date2" Grid.Column="1" Grid.Row="0"></DatePicker>
+        <Button Name="btn" Click="Btn_Click" Grid.Column="2" Grid.Row="0">Rechercher</Button>
+        
+        <DataGrid Name="TimePerActivity" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"
+                  ItemsSource="{Binding}" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Activities" Binding="{Binding Activities}" />
+                <DataGridTextColumn Width="auto" Header="Number of Pomodoro" Binding="{Binding NbPomodoro}" />
+                <DataGridTextColumn Width="auto" Header="Time" Binding="{Binding Time}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+    
 </UserControl>

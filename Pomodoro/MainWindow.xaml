@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PomodoroProjet"
         mc:Ignorable="d"
         Title="Pomodoro" Height="450" Width="520">
-    <TabControl Name="tabcontrol" SelectedIndex="0" Background="#003366">
+    <TabControl Name="tabcontrol" SelectedIndex="0" SelectionChanged="Tabcontrol_SelectionChanged" Background="#003366">
         <TabItem Header="Accueil" Style="{DynamicResource Tab}">
             <local:Accueil></local:Accueil>
         </TabItem>
@@ -14,7 +14,10 @@
             <local:Timer x:Name="Timer"></local:Timer>
         </TabItem>
         <TabItem Header="Calendrier" Style="{DynamicResource Tab}">
-            <local:Calendrier></local:Calendrier>
+            <local:Calendrier x:Name="Calendrier"></local:Calendrier>
+        </TabItem>
+        <TabItem Header="Test" Style="{DynamicResource Tab}">
+            <local:Test x:Name="Test"></local:Test>
         </TabItem>
     </TabControl>
 </Window>

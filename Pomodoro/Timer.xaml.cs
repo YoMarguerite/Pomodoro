@@ -20,7 +20,7 @@ namespace PomodoroProjet
         {
             InitializeComponent();
 
-            int minutes = 1;
+            int minutes = 25;
 
             this.tag.Content = "Work";
 
@@ -29,8 +29,10 @@ namespace PomodoroProjet
             this.timer.Content = this.time.ToString("mm:ss");
 
             this.pause = true;
+            this.start = false;
             this.takeABreak = false;
             this.nb = 0;
+            this.tags = new DataGrid().Items;
 
             this.dispatcher = new DispatcherTimer();
             this.dispatcher.Interval = TimeSpan.FromSeconds(1);
@@ -48,6 +50,7 @@ namespace PomodoroProjet
         private DispatcherTimer dispatcher;
         private DateTime time;
         private bool pause;
+        private bool start;
         private bool takeABreak;
         private int nb;
 
@@ -69,6 +72,7 @@ namespace PomodoroProjet
 
             this.btn1.Content = "❚❚";
             this.pause = false;
+            this.start = true;
         }
 
         private void dispatcherTimer_Tick(Object source, EventArgs e)
@@ -103,16 +107,14 @@ namespace PomodoroProjet
             int minute = 0;
             if (activate)
             {
-                minute = (this.nb++ % 3 == 0) ? 15 : 5;
+                this.nb++;
+                minute = (this.nb % 3 == 0) ? 15 : 5;
                 this.tag.Content = "Pause";
             }
             else
             {
                 minute = 25;
-                if (this.tags.MoveCurrentToNext())
-                {
-                    this.tag.Content = ((Tag)this.tags.CurrentItem).Libelle;
-                }
+                SaveNextPomodoro();
             }
 
             DateTime date = new DateTime();
@@ -123,10 +125,32 @@ namespace PomodoroProjet
             this.slider.Value = 0;
         }
 
+        private void SaveNextPomodoro()
+        {
+            this.start = true;
+            Tag tag = new Tag() { Libelle = "Work" };
+            if (this.tags.MoveCurrentToNext())
+            {
+                tag = ((Tag)this.tags.CurrentItem);
+            }
+            this.tag.Content = tag.Libelle;
+            PomodorosDataAccess pomodorosDataAccess = new PomodorosDataAccess();
+            Pomodoro pomodoro = new Pomodoro()
+            {
+                Libelle = tag.Libelle,
+                Date = DateTime.Now
+            };
+            pomodorosDataAccess.SavePomodoro(pomodoro);
+        }
+
         private void OnClick1(object sender, RoutedEventArgs e)
         {
             this.pause = !this.pause;
             ButonActivate(this.pause);
+            if (!start)
+            {
+                SaveNextPomodoro();
+            }
         }       
 
         private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

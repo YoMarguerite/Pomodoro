@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using PomodoroProjet.Model;
@@ -21,11 +22,22 @@ namespace PomodoroProjet.DAL
             this.Pomodoros = new ObservableCollection<Pomodoro>(database.Table<Pomodoro>());
         }
 
-        public IEnumerable<Pomodoro> getPomodoros()
+        public IEnumerable<Pomodoro> GetPomodoros()
         {
             lock (collisionLock)
             {
                 var query = from Pomodoro in database.Table<Pomodoro>()
+                            select Pomodoro;
+                return query.AsEnumerable();
+            }
+        }
+
+        public IEnumerable<Pomodoro> GetPomodorosDate(DateTime date1, DateTime date2)
+        {
+            lock (collisionLock)
+            {
+                var query = from Pomodoro in database.Table<Pomodoro>()
+                            where Pomodoro.Date>=date1 && Pomodoro.Date<=date2
                             select Pomodoro;
                 return query.AsEnumerable();
             }

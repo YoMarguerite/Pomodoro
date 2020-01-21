@@ -38,7 +38,7 @@ namespace PomodoroProjet.Class
             double r = Math.Sqrt(xDiff * xDiff + yDiff * yDiff);
 
             double angle = Math.Acos((center.Y - pos.Y) / r);
-            Console.WriteLine("r:{0},y:{1},angle:{2}.", r, pos.Y, angle);
+            //Console.WriteLine("r:{0},y:{1},angle:{2}.", r, pos.Y, angle);
             if (pos.X < radius)
                 angle = 2 * Math.PI - angle;
             if (Double.IsNaN(angle))
