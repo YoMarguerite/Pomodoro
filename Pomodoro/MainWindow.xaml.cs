@@ -11,21 +11,17 @@ namespace PomodoroProjet
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            DataContext = this;
         }
 
-        private void Tabcontrol_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void Tabcontrol_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string tabItem = ((sender as TabControl).SelectedItem as TabItem).Header as string;
 
             switch (tabItem)
             {
-                case "Calendrier":
-                    this.Calendrier.GetPomodorosLastDay();
-                    break;
-
-                case "Test":
-                    this.Test.Reset();
+                case "Details":
+                    Details.Reset();
                     break;
 
                 default:

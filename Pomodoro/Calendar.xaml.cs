@@ -7,19 +7,18 @@ using System.Windows.Controls;
 namespace PomodoroProjet
 {
     /// <summary>
-    /// Logique d'interaction pour Calendrier.xaml
+    /// Logique d'interaction pour Calendar.xaml
+    /// Permet de récupérer la liste des pomodoros
+    /// entre deux dates définis
     /// </summary>
-    public partial class Calendrier : UserControl
+    public partial class Calendar : UserControl
     {
-        private PomodorosDataAccess pomodorosDataAccess;
+        private PomodorosDataAccess pomodorosDataAccess = new PomodorosDataAccess();
         private List<ActivityTime> times;
 
-        public Calendrier()
+        public Calendar()
         {
             InitializeComponent();
-
-            pomodorosDataAccess = new PomodorosDataAccess();
-            GetPomodorosLastDay();
         }
 
         private ActivityTime ActivityTimeContains(Pomodoro pomodoro)
@@ -32,15 +31,6 @@ namespace PomodoroProjet
                 }
             }
             return null;
-        }
-
-        public void GetPomodorosLastDay()
-        {
-            DateTime dateTime1 = DateTime.Now.AddDays(-1);
-            DateTime dateTime2 = DateTime.Now.AddDays(1);
-            GetPomodorosDate(dateTime1, dateTime2);
-            this.date1.DisplayDate = dateTime1;
-            this.date2.DisplayDate = dateTime2;
         }
 
         private void GetPomodorosDate(DateTime date1,DateTime date2)
@@ -67,7 +57,13 @@ namespace PomodoroProjet
 
         private void Btn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            GetPomodorosDate(this.date1.DisplayDate, this.date2.DisplayDate);
+            if(date1.SelectedDate.HasValue && date2.SelectedDate.HasValue)
+            {
+                //On rajoute un jour à la deuxième date
+                //L'heure étant fixé à 00:00 si on choisit le 21/01/2020 comme date
+                //le pomodoro du 21/01/2020 15:00 ne sera pas pris en compte
+                GetPomodorosDate(date1.SelectedDate.Value, date2.SelectedDate.Value.AddDays(1));
+            }
         }
 
         public class ActivityTime

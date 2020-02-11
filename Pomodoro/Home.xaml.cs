@@ -7,27 +7,25 @@ using PomodoroProjet.Model;
 namespace PomodoroProjet
 {
     /// <summary>
-    /// Logique d'interaction pour Accueil.xaml
-    /// Permet d'avoir une liste des taches du jour
+    /// Logique d'interaction pour Home.xaml
+    /// Permet de créer une nouvelle liste de pomodoro
     /// </summary>
-    public partial class Accueil : UserControl
+    public partial class Home : UserControl
     {
         
-        public Accueil()
+        public Home()
         {
             InitializeComponent();
 
-            try
-            {
-                TagsDataAccess tagData = new TagsDataAccess();
-                lbx_pomodoro_bdd.ItemsSource = tagData.getTags();
-            }
-            catch
-            {
-                //MessageBox.Show("Récupération des tags impossible.");
-            }
+            GetTags();
         }
-      
+
+        public void GetTags()
+        {
+            TagsDataAccess tagData = new TagsDataAccess();
+            lbx_pomodoro_bdd.ItemsSource = tagData.getTags();
+        }
+
         //Ajout d'une nouvelle tache dans la list du jour
         public void AddItem(object sender, RoutedEventArgs e)
         {
@@ -36,12 +34,21 @@ namespace PomodoroProjet
                 try
                 {
                     TagsDataAccess tagData = new TagsDataAccess();
-                    Tag tag = new Tag
+                    Tag tag = tagData.GetTagByLibelle(tbx_libellePomodoro.Text);
+                    if (tag == null)
                     {
-                        Libelle = tbx_libellePomodoro.Text
-                    };
-                    tagData.SaveTag(tag);
-                    lbx_pomodoro.Items.Add(tag);
+                        tag = new Tag
+                        {
+                            Libelle = tbx_libellePomodoro.Text
+                        };
+                        tagData.SaveTag(tag);
+                        lbx_pomodoro.Items.Add(tag);
+                        GetTags();
+                    }
+                    else
+                    {
+                        lbx_pomodoro.Items.Add(tag);
+                    }       
                 }
                 catch
                 {
@@ -62,10 +69,11 @@ namespace PomodoroProjet
             
         }
 
-        //Ajout de tache deja existante dans la list du jour
+        //Ajout de tache deja existante dans la liste du jour
         public void AddItemBdd(object sender, RoutedEventArgs e)
         {
             lbx_pomodoro.Items.Add(((Button)sender).Tag);
+            GetTags();
         }
 
         //Lancement du pomodoro et redirection vers le timer
@@ -78,7 +86,9 @@ namespace PomodoroProjet
 
                 Timer time = (Timer)tabcontrol.FindName("Timer");
                 time.StartNewPomodoros(lbx_pomodoro.Items);
+                lbx_pomodoro.Items.Clear();
             }
         }
     }
 }
+

@@ -18,21 +18,7 @@ namespace PomodoroProjet.DAL
             database = DatabaseConnection.DbConnection();
             database.CreateTable<Tag>();
 
-            this.Tags = new ObservableCollection<Tag>(database.Table<Tag>());
-
-            if (!database.Table<Tag>().Any())
-            {
-                addnewTag();
-            }
-        }
-
-        public void addnewTag()
-        {
-            var i = SaveTag(new Tag
-            {
-                Libelle = "ok"
-            });
-            this.Tags.Add(GetTag(i));
+            Tags = new ObservableCollection<Tag>(database.Table<Tag>());
         }
 
         public IEnumerable<Tag> getTags()
@@ -50,6 +36,14 @@ namespace PomodoroProjet.DAL
             lock (collisionLock)
             {
                 return database.Table<Tag>().FirstOrDefault(Tag => Tag.ID == id);
+            }
+        }
+
+        public Tag GetTagByLibelle(string libelle)
+        {
+            lock (collisionLock)
+            {
+                return database.Table<Tag>().FirstOrDefault(Tag => Tag.Libelle == libelle);
             }
         }
 

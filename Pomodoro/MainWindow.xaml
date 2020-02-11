@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="Pomodoro" Height="450" Width="520">
     <TabControl Name="tabcontrol" SelectedIndex="0" SelectionChanged="Tabcontrol_SelectionChanged" Background="#003366">
-        <TabItem Header="Accueil" Style="{DynamicResource Tab}">
-            <local:Accueil></local:Accueil>
+        <TabItem Header="Home" Style="{DynamicResource Tab}">
+            <local:Home></local:Home>
         </TabItem>
         <TabItem Header="Timer" Style="{DynamicResource Tab}">
             <local:Timer x:Name="Timer"></local:Timer>
         </TabItem>
-        <TabItem Header="Calendrier" Style="{DynamicResource Tab}">
-            <local:Calendrier x:Name="Calendrier"></local:Calendrier>
+        <TabItem Header="Calendar" Style="{DynamicResource Tab}">
+            <local:Calendar x:Name="Calendar"></local:Calendar>
         </TabItem>
-        <TabItem Header="Test" Style="{DynamicResource Tab}">
-            <local:Test x:Name="Test"></local:Test>
+        <TabItem Header="Details" Style="{DynamicResource Tab}">
+            <local:Details x:Name="Details"></local:Details>
         </TabItem>
     </TabControl>
 </Window>

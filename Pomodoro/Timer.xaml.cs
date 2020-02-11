@@ -2,7 +2,6 @@
 using PomodoroProjet.DAL;
 using PomodoroProjet.Model;
 using System;
-using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
