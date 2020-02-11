@@ -57,7 +57,11 @@ namespace PomodoroProjet
 
         public void StartNewPomodoros(ItemCollection tags)
         {
-            this.tags = tags;
+            int minutes = 25;
+            DateTime date = new DateTime();
+            date = date.AddMinutes(minutes);
+            this.time = date;
+            this.tags = tags;        
             string libelle = ((Tag)tags[0]).Libelle;
             this.tag.Content = libelle;
             
