@@ -13,20 +13,5 @@ namespace PomodoroProjet
             InitializeComponent();
             DataContext = this;
         }
-
-        private void Tabcontrol_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string tabItem = ((sender as TabControl).SelectedItem as TabItem).Header as string;
-
-            switch (tabItem)
-            {
-                case "Details":
-                    Details.Reset();
-                    break;
-
-                default:
-                    return;
-            }
-        }
     }
 }
